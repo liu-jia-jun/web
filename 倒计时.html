@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #first {
+            margin-left: 100px;
+        }
+
+        div {
+
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function () {
+
+
+
+
+
+            var div = document.querySelectorAll("div");
+            function show() {
+
+                var timenow = new Date();//当前时间
+                console.log(timenow);
+                var timefurture = new Date("2020-09-14 00:00:00");//指定时间
+                console.log(timefurture);
+                var td = parseInt((timefurture.getTime() - timenow.getTime()) / 1000);//得到总秒数
+                console.log(td);
+
+                var day = parseInt(td / 60 / 60 / 24);//天
+                day = day < 10 ? "0" + day : day;
+                console.log(day + "天");
+                div[0].innerHTML = day + "天：";
+
+                var hour = parseInt(td / 60 / 60 % 24);//时
+                hour = hour < 10 ? "0" + hour : hour;
+                console.log(hour + "时");
+                div[1].innerHTML = hour + "时：";
+
+                var minutes = parseInt(td / 60 % 60);
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                console.log(minutes + "分");
+                div[2].innerHTML = minutes + "分";
+                var second = parseInt(td % 60);
+                second = second < 10 ? "0" + second : second;
+                console.log(second + "秒");
+                div[3].innerHTML = second + "秒";
+            }
+            setInterval(show, 1000);
+
+        });
+    </script>
+</head>
+
+<body>
+
+
+
+
+
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .ys {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 65px;
+            height: 65px;
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+
+        .bs {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            width: 65px;
+            height: 65px;
+            text-align: center;
+            background-color: cornflowerblue;
+        }
+    </style>
+
+    <script>
+        window.addEventListener("load", function () {
+            var ys = document.querySelector(".ys");
+
+            var bs = document.querySelector(".bs");
+            console.log(bs);
+            ys.addEventListener("click", function () {
+                var timer1 = setInterval(function () {
+                    ys.style.left = ys.offsetLeft + 10 + "px";
+                    ys.style.top = ys.offsetTop + 1 + "px";
+
+                    if (ys.offsetLeft > 500 || ys.offsetTop > 400) {
+                        clearInterval(timer1);
+                    }
+
+
+                }, 60);
+
+                console.log(1);
+            });
+
+            bs.addEventListener("click", function () {
+                var timer2 = setInterval(function () {
+                    bs.style.left = bs.offsetLeft + ((bs.offsetLeft + 1) / 100) + "px";
+
+
+
+                    if (bs.offsetLeft > 1900) {
+                        clearInterval(timer2);
+                    }
+                }, 60);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- 匀速块 -->
+    <div class="ys">
+        <h1>匀速</h1>
+    </div>
+
+    <!-- 变速块 -->
+
+
+    <div class="bs">
+        <h1>变速</h1>
+    </div>
+</body>
+
+</html>

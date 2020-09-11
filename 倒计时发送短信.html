@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+
+    <script>
+        window.addEventListener("load", function () {
+            var btn = document.querySelector("button");
+            btn.addEventListener("click", function () {
+
+                this.disabled = true;
+
+                var i = 2;
+
+
+                var time = setInterval(function () {
+
+
+                    if (i == 0) {
+                        btn.disabled = false;
+                        clearInterval(time);
+                        btn.innerHTML = "点击发送";
+
+                    } else {
+                        btn.innerHTML = "请" + i + "秒后再次点击";
+                        i--;
+                    }
+
+
+                }, 1000);
+
+
+
+
+
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <input type="text"><button>点击发送</button>
+
+
+
+</body>
+
+</html>

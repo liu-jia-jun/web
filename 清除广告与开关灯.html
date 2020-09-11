@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #qingchu {
+            margin-left: 160px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="../html -picture/清除图标.png" alt="" id="qingchu">
+    </div>
+
+    <img src="../html -picture/广告图标.png" alt="" id="guanggao">
+
+    <button id="guandeng">关灯</button>
+    <script>
+
+        var fox = 0;
+        var qc = document.getElementById("qingchu");
+        var gg = document.getElementById("guanggao");
+        var gd = document.getElementById("guandeng");
+        var bd = document.querySelector("body");
+        qc.onclick = function () {
+            this.style.display = "none";
+            gg.style.display = "none";
+        }
+        gd.onclick = function () {
+            if (fox == 0) {
+                bd.style.backgroundColor = "black";
+                fox = 1;
+            } else {
+                bd.style.backgroundColor = "white";
+                fox = 0;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

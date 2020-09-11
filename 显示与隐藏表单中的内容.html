@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .biaodan {
+            width: 260px;
+            height: 30px;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 35px;
+            vertical-align: top;
+            margin-top: 10px;
+            margin-left: 870px;
+        }
+
+        a {
+            display: inline-block;
+            width: 305px;
+            height: 30px;
+            background-color: red;
+            text-align: center;
+            margin-left: 870px;
+            margin-top: 10px;
+            text-decoration: none;
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+
+        <img src="../html -picture/用户图标.png">
+        <input type="text" value="用户名" class="biaodan" id="biaodan1">
+    </div>
+    <div>
+        <img src="../html -picture/密码图标.png">
+        <input type="text" value="密码" class="biaodan" id="biaodan2">
+    </div>
+    <div>
+        <a href="#">登录</a>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+
+        var but1 = document.getElementById("biaodan1");
+        var but2 = document.getElementById("biaodan2");
+        var fox = 0;
+
+        but1.onfocus = function () {
+            if (this.value == "用户名") {
+                this.value = "";
+            }
+
+
+        }
+
+        but1.onblur = function () {
+            if (this.value == "") {
+                this.value = "用户名";
+            }
+
+        }
+        but2.onfocus = function () {
+            if (this.value == "密码") {
+                this.value = "";
+            }
+
+
+
+        }
+
+        but2.onblur = function () {
+            if (this.value == "") {
+                this.value = "密码";
+            }
+
+        }
+    </script>
+</body>
+
+</html>

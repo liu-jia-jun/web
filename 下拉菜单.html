@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            display: inline-block;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            display: none;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="first">
+        <div>
+            <a href="#">电影</a>
+        </div>
+        <ul>
+            <li> <a href="#">爱情片</a></li>
+            <li> <a href="">动作片</a></li>
+            <li> <a href="">恐怖片</a></li>
+            <li> <a href="">喜剧片</a></li>
+        </ul>
+    </div>
+
+    <div class="first">
+        <div>
+            <a href="#">泡面</a>
+        </div>
+        <ul>
+            <li> <a href="">红烧牛肉</a>/li>
+            <li> <a href="">老坛酸菜</a></li>
+            <li> <a href="">香辣牛肉</a></li>
+            <li> <a href="">卤香牛肉</a></li>
+        </ul>
+
+
+
+
+    </div>
+    <script>
+        var first = document.getElementsByClassName("first");
+        console.log(first);
+        console.log(first[0].children[0]);
+
+        for (var i = 0; i < first.length; i++) {
+            first[i].children[0].onmouseover = function () {
+                first[i].children[1].style.display = "block";
+            }
+        }
+    </script>
+
+
+</body>
+
+</html>

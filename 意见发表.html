@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #tijiao {
+            display: inline-block;
+            width: 200px;
+            height: 20px;
+        }
+
+        .deleat {
+            float: right;
+        }
+
+        li {
+            text-align: left;
+            display: block;
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="tijiao" value="">
+    <button>提交</button>
+    <ul>
+        <li></li>
+    </ul>
+
+
+    <script>
+        var btn = document.querySelector("button");
+        var text = document.getElementById("tijiao");
+        var ul = document.querySelector("ul");
+
+        btn.onclick = function () {
+
+            if (text.value == "") {
+                alert("内容为空");
+                return;
+            } else {
+                var liput = document.createElement("li");
+                var content = text.value;
+                console.log(content);
+                liput.innerHTML = content + '<a href="javascript:" class="deleat">删除</a>';
+                console.log(liput.innerText);
+                ul.insertBefore(liput, ul.children[0]);
+
+                var aa = document.querySelectorAll("a");;
+                for (var i = 0; i < aa.length; i++) {
+                    aa[i].onclick = function () {
+                        ul.removeChild(this.parentNode);
+                    }
+                }
+
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>

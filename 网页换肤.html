@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul {
+            display: none;
+        }
+
+        img {
+            width: 50px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <button>换肤</button>
+    <div>
+        <ul>
+            <li><img src="../html -picture/背景图片01.jpg" alt=""></li>
+            <li><img src="../html -picture/背景图片02.jpg" alt=""></li>
+            <li><img src="../html -picture/背景图片03.jpg" alt=""></li>
+            <li><img src="../html -picture/青花瓷图片.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <script>
+        var fox = 0;
+        var but = document.querySelector("button");
+        var ulbiaoqian = document.querySelector("ul");
+
+        var imgs = document.querySelectorAll("img");
+
+        var bodybiaoqian = document.body;
+
+        but.onclick = function () {
+            if (fox == 0) {
+                ulbiaoqian.style.display = "block";
+                fox = 1;
+            } else {
+                ulbiaoqian.style.display = "none";
+                fox = 0;
+            }
+
+            for (var i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function () {
+                    bodybiaoqian.style.backgroundImage = "url(" + this.src + ")";
+                    bodybiaoqian.style.backgroundSize = "cover";
+                    // bodybiaoqian.style.backgroundRepeat = "no-repeat";
+                }
+            }
+
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

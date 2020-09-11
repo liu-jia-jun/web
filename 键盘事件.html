@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        img {
+            position: absolute;
+            width: 115px;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <img src="./../html -picture/猪.jpeg">
+
+
+    <script>
+        var imgs = document.querySelector("img");
+
+        document.addEventListener("mousemove", function (e) {
+            imgs.style.left = (e.clientX - 50) + "px";
+            imgs.style.top = (e.clientY - 50) + "px";
+        });
+
+        document.addEventListener("keydown", function (e) {
+            console.log("成功");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #show {
+            display: none;
+            width: 120px;
+            height: 20px;
+            border: 1px solid red;
+            font-size: 16px;
+        }
+
+        div {
+            width: 120px;
+            height: 20px;
+        }
+
+        input {
+            width: 120px;
+            height: 20px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="show"> </div>
+    </div>
+
+    <input type="text">
+
+    <script>
+
+        var show = document.querySelector("#show");
+        var put = document.querySelector("input");
+
+
+        put.addEventListener("keyup", function () {
+            if (this.value == "") {
+                show.style.display = "none";
+            }
+            else {
+                show.style.display = "block";
+                show.innerHTML = this.value;
+            }
+        });
+        put.addEventListener("focus", function () {
+            if (this.value != "") {
+                show.style.display = "block";
+                console.log("显示成功");
+            }
+
+        });
+        put.addEventListener("blur", function () {
+            show.style.display = "none";
+            console.log("隐藏成功");
+        });
+    </script>
+</body>
+
+</html>

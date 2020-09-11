@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            margin: 0px auto;
+        }
+
+        td {
+            display: inline-block;
+            width: 100px;
+            height: 15px;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+
+        <thead>
+            <tr>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>成绩</td>
+                <td>操作</td>
+            </tr>
+
+        </thead>
+        <tbody>
+
+
+        </tbody>
+
+    </table>
+
+
+    <script>//此处的数据有限   需要手动在js中添加
+        var dates = [
+            {
+                number: 0001,
+                name: "刘佳俊",
+                grade: 88,
+
+            },
+            {
+                number: 0002,
+                name: "许佳",
+                grade: 87,
+            },
+            {
+                number: 0003,
+                name: "王梦婷",
+                grade: 86,
+            },
+            {
+                number: 0004,
+                name: "胡玉杰",
+                grade: 80,
+            }
+        ];
+        var tbody = document.querySelector("tbody");
+        for (var i = 0; i < dates.length; i++) {
+            var tr = document.createElement("tr");//添加行
+            tbody.appendChild(tr);
+            for (var k in dates[i]) {
+                var td = document.createElement("td");
+                td.innerHTML = dates[i][k];
+                tr.appendChild(td);//添加列与单元格
+            }
+
+            var td = document.createElement("td");
+            td.innerHTML = '<a href="javascript:;">删除</a>';
+            tr.appendChild(td);
+
+
+            var as = document.querySelectorAll("a");
+            as[i].onclick = function () {
+                tbody.removeChild(this.parentNode.parentNode);
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

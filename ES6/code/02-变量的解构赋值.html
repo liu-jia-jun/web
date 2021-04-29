@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>变量的解构赋值</title>
+    <!-- 
+解构赋值:
+1.本质是将对象中的属性值赋值给同名的变量,
+        如果没有变量名则按顺序赋值
+
+2.解构赋值时，顺序不必要，变量名要相同
+
+
+
+     -->
+    <script>
+      // 数组解构赋值
+      let f4 = ["小沈阳", "刘能", "赵四", "宋小宝"];
+
+      let [x, l, z, s] = f4;
+
+      console.log(x);
+      console.log(l);
+      console.log(z);
+      console.log(s);
+
+      //对象的解构赋值
+      let object = { name: "刘佳俊", age: 20 };
+      let { age, name } = object;
+      console.log(name);
+      console.log(age);
+    </script>
+  </head>
+  <body></body>
+</html>

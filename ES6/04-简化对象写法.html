@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简化对象写法</title>
+    <!-- 
+
+        es6允许在大括号中直接写入变量和函数作为对象的属性和方法
+     -->
+    <script>
+      let name = "刘佳俊";
+      let fun = function () {
+        console.log(1);
+      };
+
+      let school = {
+        name,
+        fun,
+        fun2() {
+          console.log(2);
+        },
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
